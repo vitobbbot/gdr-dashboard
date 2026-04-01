@@ -1,0 +1,199 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #0a0a1a; /* Very dark blue-purple background */
+    color: #e0e0e0; /* Light grey text */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.dashboard-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1a1a2e; /* Slightly lighter dark background for main content */
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.15); /* Subtle cyan glow */
+}
+
+.dashboard-header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #3a3a5e; /* Divider */
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    font-size: 2.8em;
+    color: #00bcd4; /* Cyan for main title */
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    margin-bottom: 10px;
+}
+
+.date-time {
+    font-size: 1.2em;
+    color: #a0a0ff; /* Lighter blue for date/time */
+    font-family: 'Roboto Mono', monospace; /* Monospace for techy feel */
+}
+
+.dashboard-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.dashboard-section {
+    background-color: #2a2a4a; /* Darker panel background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+}
+
+.dashboard-section h2 {
+    font-size: 1.8em;
+    color: #8a2be2; /* Darker purple for section titles */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #4a4a7a;
+    padding-bottom: 10px;
+}
+
+/* Overview Section */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.kpi-card {
+    background-color: #3a3a6a; /* KPI card background */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.08);
+    border-left: 5px solid #00bcd4; /* Cyan accent */
+}
+
+.kpi-card h3 {
+    color: #e0e0e0;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.kpi-value {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #00bcd4; /* Cyan for KPI values */
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+}
+
+/* Funnel Section */
+.funnel-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.funnel-card {
+    background-color: #3a3a6a;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+    min-width: 180px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.08);
+    border-bottom: 5px solid #8a2be2; /* Purple accent */
+}
+
+.funnel-card h3 {
+    color: #e0e0e0;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.funnel-value {
+    font-size: 2em;
+    font-weight: bold;
+    color: #8a2be2; /* Purple for funnel values */
+    text-shadow: 0 0 8px rgba(138, 43, 226, 0.4);
+}
+
+.conversion-rate {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #00bcd4; /* Cyan for conversion rates */
+    font-weight: bold;
+}
+
+/* Channels Section */
+.channel-list {
+    background-color: #3a3a6a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.08);
+}
+
+.channel-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dotted #4a4a7a;
+}
+
+.channel-item:last-child {
+    border-bottom: none;
+}
+
+.channel-name {
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+.channel-value {
+    color: #00bcd4;
+}
+
+/* Anomaly Section */
+.anomaly-alerts {
+    background-color: #3a3a6a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.1);
+    border-left: 5px solid #ff4500; /* Orange-red warning */
+}
+
+.anomaly-alerts p {
+    color: #ff4500;
+    font-weight: bold;
+}
+
+.dashboard-footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 2px solid #3a3a5e;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #7a7a9e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .dashboard-main {
+        grid-template-columns: 1fr; /* Stack sections on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-header h1 {
+        font-size: 2em;
+    }
+    .kpi-value {
+        font-size: 2em;
+    }
+    .funnel-card {
+        min-width: 120px;
+    }
+}
