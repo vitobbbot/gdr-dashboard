@@ -72,7 +72,11 @@ function pct(a, b) {
 }
 function set(id, val) { document.getElementById(id).textContent = val; }
 
-fetch('data/2026-03-30_gayerdar_kpi.csv').then(r => r.text()).then(txt => {
+// 讀 latest.json 取得當前 CSV 檔名
+fetch('data/latest.json')
+    .then(r => r.json())
+    .then(meta => fetch('data/' + meta.file))
+    .then(r => r.text()).then(txt => {
     const d = parseCSV(txt);
     set('reportDate', d.date + ' 日報');
     set('revenue', '$' + (+d.revenue).toFixed(2));
